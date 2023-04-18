@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+
+jobs:
+  Jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Instalando Dependencias
+        run: npm install
+      - name: Ejecutando Tests del TestCasa
+        run: npm test TestCasa.test.ts
